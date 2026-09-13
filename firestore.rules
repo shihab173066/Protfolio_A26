@@ -1,0 +1,18 @@
+rules_version = '2';
+
+// Public read, authenticated write.
+// Deploy with:  firebase deploy --only firestore:rules
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /portfolio/{document} {
+      allow read: if true;
+      // Replace REPLACE_WITH_YOUR_ADMIN_UID with the UID of the admin user you
+      // create in Firebase Authentication → Users.
+      allow write: if request.auth != null && request.auth.uid == 'REPLACE_WITH_YOUR_ADMIN_UID';
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

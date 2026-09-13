@@ -1,0 +1,105 @@
+<script setup>
+import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+import AppIcon from '../AppIcon.vue'
+import { useAuth } from '../../composables/useAuth'
+import { isFirebaseConfigured } from '../../firebase'
+
+const { authError, busy, login, usesFirebaseAuth } = useAuth()
+
+const id = ref('')
+const password = ref('')
+const show = ref(false)
+
+async function submit() {
+  await login(id.value.trim(), password.value)
+}
+</script>
+
+<template>
+  <div class="relative grid min-h-screen place-items-center overflow-hidden bg-ink-950 px-5 py-16">
+    <div class="pointer-events-none absolute inset-0 grid-backdrop opacity-40" aria-hidden="true" />
+    <div
+      class="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full opacity-30 blur-3xl"
+      style="background: radial-gradient(circle, var(--accent), transparent 65%)"
+      aria-hidden="true"
+    />
+
+    <div class="relative w-full max-w-md">
+      <RouterLink to="/" class="mb-6 inline-flex items-center gap-2 text-sm text-ink-400 transition hover:text-white">
+        <AppIcon name="arrow" :size="15" class="rotate-180" />
+        Back to portfolio
+      </RouterLink>
+
+      <form class="rounded-2xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-xl sm:p-9" @submit.prevent="submit">
+        <span
+          class="mb-5 grid h-12 w-12 place-items-center rounded-xl text-white shadow-lift"
+          style="background-image: linear-gradient(135deg, var(--accent), #0f172a)"
+        >
+          <AppIcon name="lock" :size="20" />
+        </span>
+
+        <h1 class="text-2xl font-extrabold tracking-tight text-white">Content studio</h1>
+        <p class="mt-1.5 text-sm text-ink-400">Sign in to edit the live portfolio.</p>
+
+        <div class="mt-7 grid gap-4">
+          <div>
+            <label class="label !text-ink-400" for="admin-id">Admin ID</label>
+            <input
+              id="admin-id"
+              v-model="id"
+              class="field border-white/10 bg-white/5 text-white placeholder:text-ink-500"
+              type="text"
+              autocomplete="username"
+              placeholder="admin"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="label !text-ink-400" for="admin-pass">Password</label>
+            <div class="relative">
+              <input
+                id="admin-pass"
+                v-model="password"
+                class="field border-white/10 bg-white/5 pr-11 text-white placeholder:text-ink-500"
+                :type="show ? 'text' : 'password'"
+                autocomplete="current-password"
+                placeholder="••••••••"
+                required
+              />
+              <button
+                type="button"
+                class="absolute right-2 top-1/2 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-lg text-ink-400 hover:text-white"
+                :aria-label="show ? 'Hide password' : 'Show password'"
+                @click="show = !show"
+              >
+                <AppIcon name="eye" :size="16" />
+              </button>
+            </div>
+          </div>
+
+          <p v-if="authError" role="alert" class="rounded-lg bg-rose-500/15 px-3 py-2 text-sm text-rose-200">
+            {{ authError }}
+          </p>
+
+          <button type="submit" class="btn-primary w-full" :disabled="busy">
+            <AppIcon name="lock" :size="16" />
+            {{ busy ? 'Verifying…' : 'Sign in' }}
+          </button>
+        </div>
+
+        <p class="mt-6 rounded-lg border border-white/10 bg-white/5 p-3 text-[11px] leading-5 text-ink-400">
+          <template v-if="usesFirebaseAuth">
+            Firebase Authentication is active — use your admin account password.
+          </template>
+          <template v-else>
+            Development credentials: <span class="font-mono text-ink-200">admin / password1234</span>.
+            <span v-if="!isFirebaseConfigured"> Firebase is not configured, so changes save to this browser only.</span>
+            Replace this with Firebase Auth + Firestore rules before publishing.
+          </template>
+        </p>
+      </form>
+    </div>
+  </div>
+</template>
