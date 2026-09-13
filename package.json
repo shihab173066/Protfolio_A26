@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "firebase": "^12.19.0",
     "vue-router": "^5.3.1"
   },
