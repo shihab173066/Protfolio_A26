@@ -1,6 +1,5 @@
 import { computed, ref } from 'vue'
-import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
-import { auth, isFirebaseConfigured } from '../firebase'
+import { getFirebase, isFirebaseConfigured } from '../firebase'
 
 // SECURITY NOTE
 // -------------
@@ -26,7 +25,7 @@ const signedIn = ref(sessionStorage.getItem(SESSION_KEY) === '1')
 const authError = ref('')
 const busy = ref(false)
 
-export const usesFirebaseAuth = computed(() => Boolean(isFirebaseConfigured && auth && ADMIN_EMAIL))
+export const usesFirebaseAuth = computed(() => Boolean(isFirebaseConfigured && ADMIN_EMAIL))
 
 export function useAuth() {
   async function login(id, password) {
@@ -34,7 +33,8 @@ export function useAuth() {
     authError.value = ''
     try {
       if (usesFirebaseAuth.value) {
-        await signInWithEmailAndPassword(auth, ADMIN_EMAIL, password)
+        const fb = await getFirebase()
+        await fb.authSdk.signInWithEmailAndPassword(fb.auth, ADMIN_EMAIL, password)
       } else if (id !== DEV_ID || password !== DEV_PASSWORD) {
         throw new Error('Invalid credentials.')
       }
@@ -51,7 +51,10 @@ export function useAuth() {
   }
 
   async function logout() {
-    if (usesFirebaseAuth.value) await signOut(auth).catch(() => {})
+    if (usesFirebaseAuth.value) {
+      const fb = await getFirebase()
+      await fb.authSdk.signOut(fb.auth).catch(() => {})
+    }
     signedIn.value = false
     sessionStorage.removeItem(SESSION_KEY)
   }

@@ -3,9 +3,9 @@
 // Values come from Vite env vars (see .env.example). When they are absent the
 // app transparently falls back to a localStorage-backed store so it can be run
 // and demoed without a Firebase project.
-import { initializeApp } from 'firebase/app'
-import { getFirestore } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
+//
+// The SDK is imported dynamically so visitors who only read the portfolio never
+// pay for it in the initial bundle.
 
 const config = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -18,16 +18,31 @@ const config = {
 
 export const isFirebaseConfigured = Boolean(config.apiKey && config.projectId)
 
-let db = null
-let auth = null
-
-if (isFirebaseConfigured) {
-  const app = initializeApp(config)
-  db = getFirestore(app)
-  auth = getAuth(app)
-}
-
-export { db, auth }
-
 export const CONTENT_COLLECTION = 'portfolio'
 export const CONTENT_DOC = 'content'
+
+let pending = null
+
+/** Resolves to `{ db, firestore, auth, authSdk }`, or `null` when unconfigured. */
+export function getFirebase() {
+  if (!isFirebaseConfigured) return Promise.resolve(null)
+  if (pending) return pending
+
+  pending = (async () => {
+    const [{ initializeApp }, firestore, authSdk] = await Promise.all([
+      import('firebase/app'),
+      import('firebase/firestore'),
+      import('firebase/auth'),
+    ])
+    const app = initializeApp(config)
+    return {
+      app,
+      firestore,
+      authSdk,
+      db: firestore.getFirestore(app),
+      auth: authSdk.getAuth(app),
+    }
+  })()
+
+  return pending
+}

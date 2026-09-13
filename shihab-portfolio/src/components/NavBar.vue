@@ -1,9 +1,10 @@
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import AppIcon from './AppIcon.vue'
+import { onAnchorClick } from '../utils/scroll'
 
-defineProps({
+const props = defineProps({
   profile: { type: Object, required: true },
   links: { type: Array, default: () => [] },
 })
@@ -18,6 +19,12 @@ function onScroll() {
   scrolled.value = window.scrollY > 24
 }
 
+async function observeSections() {
+  await nextTick()
+  observer?.disconnect()
+  document.querySelectorAll('section[id]').forEach((el) => observer?.observe(el))
+}
+
 onMounted(() => {
   window.addEventListener('scroll', onScroll, { passive: true })
   onScroll()
@@ -30,8 +37,10 @@ onMounted(() => {
     },
     { rootMargin: '-45% 0px -50% 0px' },
   )
-  document.querySelectorAll('section[id]').forEach((el) => observer.observe(el))
+  observeSections()
 })
+
+watch(() => props.links.map((l) => l.id).join(), observeSections)
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', onScroll)
@@ -54,7 +63,7 @@ const initials = (name) =>
     :class="scrolled ? 'border-b border-ink-200/70 bg-white/85 backdrop-blur-xl' : 'bg-transparent'"
   >
     <nav class="shell flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
-      <a href="#top" class="group flex items-center gap-3">
+      <a href="#top" class="group flex items-center gap-3" @click="onAnchorClick($event, 'top')">
         <span
           class="grid h-9 w-9 place-items-center rounded-xl text-sm font-extrabold text-white shadow-lift"
           style="background-image: linear-gradient(135deg, var(--accent), #0f172a)"
@@ -74,6 +83,7 @@ const initials = (name) =>
             :class="
               active === link.id ? 'bg-accent-50 accent-text' : 'text-ink-600 hover:bg-ink-100 hover:text-ink-900'
             "
+            @click="onAnchorClick($event, link.id)"
           >
             {{ link.title }}
           </a>
@@ -116,7 +126,7 @@ const initials = (name) =>
             <a
               :href="`#${link.id}`"
               class="block rounded-lg px-3 py-2.5 text-sm font-medium text-ink-700 hover:bg-ink-100"
-              @click="open = false"
+              @click="onAnchorClick($event, link.id); open = false"
             >
               {{ link.title }}
             </a>

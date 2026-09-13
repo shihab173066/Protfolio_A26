@@ -1,12 +1,12 @@
 {
-  "dependencies": {
-    "@tailwindcss/vite": "^4.3.3",
-    "firebase": "^12.19.0",
-    "vue-router": "^5.3.1"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.6.0",
-    "postcss": "^8.5.28",
-    "tailwindcss": "^3.4.19"
+  "name": "protfolio-a26",
+  "private": true,
+  "description": "Wrapper scripts so the app can also be run from the repository root.",
+  "scripts": {
+    "postinstall": "npm --prefix shihab-portfolio install",
+    "dev": "npm --prefix shihab-portfolio run dev",
+    "build": "npm --prefix shihab-portfolio run build",
+    "preview": "npm --prefix shihab-portfolio run preview",
+    "deploy": "npm --prefix shihab-portfolio run deploy"
   }
 }

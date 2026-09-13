@@ -1,6 +1,5 @@
 import { reactive, readonly, ref } from 'vue'
-import { doc, onSnapshot, setDoc } from 'firebase/firestore'
-import { CONTENT_COLLECTION, CONTENT_DOC, db, isFirebaseConfigured } from '../firebase'
+import { CONTENT_COLLECTION, CONTENT_DOC, getFirebase, isFirebaseConfigured } from '../firebase'
 import { cloneDefaults, emptyItem, uid } from '../data/defaultContent'
 
 const LOCAL_KEY = 'shihab-portfolio:content'
@@ -97,34 +96,33 @@ function setContent(next) {
  * Starts the live content stream. With Firebase configured this is a Firestore
  * `onSnapshot` listener, so an admin save is pushed to every open visitor tab.
  */
-export function initContent() {
+export async function initContent() {
   if (started) return
   started = true
 
-  if (!isFirebaseConfigured || !db) {
-    setContent(readLocal())
-    state.loading = false
-    ready.value = true
-    return
-  }
+  // Paint the cached copy immediately, then let Firestore correct it.
+  setContent(readLocal())
+  state.loading = false
+  ready.value = true
 
-  const ref_ = doc(db, CONTENT_COLLECTION, CONTENT_DOC)
+  const fb = await getFirebase()
+  if (!fb) return
+
+  const { doc, onSnapshot } = fb.firestore
   onSnapshot(
-    ref_,
+    doc(fb.db, CONTENT_COLLECTION, CONTENT_DOC),
     (snap) => {
-      setContent(snap.exists() ? snap.data() : readLocal())
-      state.loading = false
+      if (snap.exists()) {
+        setContent(snap.data())
+        writeLocal(state.content)
+      }
       state.error = ''
-      ready.value = true
     },
     (err) => {
-      // Fall back to the cached copy so visitors still see something.
+      // Keep showing the cached copy so visitors still see something.
       console.error('[portfolio] Firestore subscription failed:', err)
-      setContent(readLocal())
       state.error = 'Live content unavailable — showing the last cached version.'
       state.source = 'local'
-      state.loading = false
-      ready.value = true
     },
   )
 }
@@ -134,8 +132,10 @@ export async function saveContent(next) {
   state.saving = true
   state.error = ''
   try {
-    if (isFirebaseConfigured && db) {
-      await setDoc(doc(db, CONTENT_COLLECTION, CONTENT_DOC), payload)
+    const fb = await getFirebase()
+    if (fb) {
+      const { doc, setDoc } = fb.firestore
+      await setDoc(doc(fb.db, CONTENT_COLLECTION, CONTENT_DOC), payload)
     }
     writeLocal(payload)
     // With Firestore the snapshot listener also pushes this, but setting it
@@ -154,10 +154,6 @@ export async function saveContent(next) {
 
 export async function resetContent() {
   return saveContent(cloneDefaults())
-}
-
-export function exportContent() {
-  return JSON.stringify(state.content, null, 2)
 }
 
 export async function importContent(json) {

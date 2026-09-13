@@ -7,6 +7,7 @@ import SectionRenderer from '../components/SectionRenderer.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import AppIcon from '../components/AppIcon.vue'
 import { useContent } from '../composables/useContent'
+import { onAnchorClick } from '../utils/scroll'
 
 const { state } = useContent()
 
@@ -23,9 +24,17 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 
 <template>
   <div>
+    <a
+      href="#main"
+      class="no-print sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+      @click="onAnchorClick($event, 'main')"
+    >
+      Skip to content
+    </a>
+
     <NavBar :profile="profile" :links="navLinks" />
 
-    <main>
+    <main id="main">
       <HeroSection :profile="profile" />
 
       <p v-if="state.error" class="shell mb-4 rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">
@@ -53,6 +62,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
         class="no-print fixed bottom-6 right-6 z-40 grid h-11 w-11 place-items-center rounded-full text-white shadow-lift transition hover:-translate-y-1"
         style="background-image: linear-gradient(135deg, var(--accent), #0f172a)"
         aria-label="Back to top"
+        @click="onAnchorClick($event, 'top')"
       >
         <AppIcon name="up" :size="18" :stroke-width="2.2" />
       </a>

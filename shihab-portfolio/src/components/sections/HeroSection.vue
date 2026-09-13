@@ -1,6 +1,7 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import AppIcon from './AppIcon.vue'
+import AppIcon from '../AppIcon.vue'
+import { onAnchorClick } from '../../utils/scroll'
 
 const props = defineProps({
   profile: { type: Object, required: true },
@@ -94,7 +95,7 @@ onBeforeUnmount(() => clearTimeout(timer))
             <AppIcon name="download" :size="17" />
             Download resume
           </a>
-          <a href="#contact" class="btn-ghost">
+          <a href="#contact" class="btn-ghost" @click="onAnchorClick($event, 'contact')">
             <AppIcon name="mail" :size="17" />
             Hire me
           </a>
