@@ -53,42 +53,6 @@ const details = computed(() =>
       </button>
       <p v-if="resumeError" role="alert" class="text-sm text-rose-600">{{ resumeError }}</p>
     </div>
-
-    <!-- <form v-reveal="100" class="card p-6 sm:p-8" @submit.prevent>
-      <h3 class="text-lg font-bold text-ink-900">Send a message</h3>
-      <p class="mt-1 text-sm text-ink-500">Fill this in and your mail client opens with it ready to send.</p>
-
-      <div class="mt-6 grid gap-4">
-        <div>
-          <label class="label" for="c-name">Your name</label>
-          <input id="c-name" v-model="form.name" class="field" type="text" placeholder="Jane Doe" autocomplete="name" />
-        </div>
-        <div>
-          <label class="label" for="c-email">Your email</label>
-          <input
-            id="c-email"
-            v-model="form.email"
-            class="field"
-            type="email"
-            placeholder="jane@company.com"
-            autocomplete="email"
-          />
-        </div>
-        <div>
-          <label class="label" for="c-msg">Message</label>
-          <textarea id="c-msg" v-model="form.message" class="field min-h-[9rem]" placeholder="Tell me about the role or project…" />
-        </div>
-        <a
-          :href="mailto"
-          class="btn-primary"
-          :class="!form.message ? 'pointer-events-none opacity-60' : ''"
-          :aria-disabled="!form.message"
-        >
-          <AppIcon name="mail" :size="17" />
-          Compose email
-        </a>
-      </div>
-    </form> -->
     <div v-reveal="100" class="card overflow-hidden w-full min-h-[400px] sm:min-h-[500px]">
       <iframe
         title="Map of Dhaka, Bangladesh"
