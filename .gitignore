@@ -1,0 +1,8 @@
+node_modules
+dist
+
+# Local env / secrets — never commit these.
+# Duplicated from shihab-portfolio/.gitignore as a repo-wide backstop.
+.env
+.env.*
+!.env.example

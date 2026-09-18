@@ -1,11 +1,14 @@
 <script setup>
 import { computed, ref } from 'vue'
 import AppIcon from '../AppIcon.vue'
+import { useResume } from '../../composables/useResume'
 
 const props = defineProps({
   section: { type: Object, required: true },
   profile: { type: Object, required: true },
 })
+
+const { generating, error: resumeError, downloadResume } = useResume()
 
 const form = ref({ name: '', email: '', message: '' })
 
@@ -44,22 +47,14 @@ const details = computed(() =>
         </li>
       </ul>
 
-      <div v-if="section.items?.length" class="card p-5">
-        <h3 class="mb-3 text-xs font-bold uppercase tracking-wider text-ink-500">References</h3>
-        <div v-for="item in section.items" :key="item.id" class="text-sm">
-          <p class="font-bold text-ink-900">{{ item.title }}</p>
-          <p class="text-ink-500">{{ item.subtitle }}</p>
-          <p v-for="(b, bi) in item.bullets" :key="bi" class="mt-1 break-all text-ink-600">{{ b }}</p>
-        </div>
-      </div>
-
-      <a v-if="profile.resumeUrl" :href="profile.resumeUrl" download class="btn-primary w-full sm:w-auto">
+      <button type="button" class="btn-primary w-full sm:w-auto" style="height: 50px; display: flex; align-items: center; justify-content: center;" :disabled="generating" @click="downloadResume">
         <AppIcon name="download" :size="17" />
-        Download resume (PDF)
-      </a>
+        {{ generating ? 'Building PDF…' : 'Download resume (PDF)' }}
+      </button>
+      <p v-if="resumeError" role="alert" class="text-sm text-rose-600">{{ resumeError }}</p>
     </div>
 
-    <form v-reveal="100" class="card p-6 sm:p-8" @submit.prevent>
+    <!-- <form v-reveal="100" class="card p-6 sm:p-8" @submit.prevent>
       <h3 class="text-lg font-bold text-ink-900">Send a message</h3>
       <p class="mt-1 text-sm text-ink-500">Fill this in and your mail client opens with it ready to send.</p>
 
@@ -93,6 +88,18 @@ const details = computed(() =>
           Compose email
         </a>
       </div>
-    </form>
+    </form> -->
+    <div v-reveal="100" class="card overflow-hidden w-full min-h-[400px] sm:min-h-[500px]">
+      <iframe
+        title="Map of Dhaka, Bangladesh"
+        width="100%"
+        height="100%"
+        style="border:0; min-height: 400px;"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Dhaka,Bangladesh&t=&z=12&ie=UTF8&iwloc=&output=embed">
+      </iframe>
+    </div>
   </div>
 </template>

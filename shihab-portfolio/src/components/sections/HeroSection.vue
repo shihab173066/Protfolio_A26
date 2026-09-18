@@ -2,10 +2,13 @@
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import AppIcon from '../AppIcon.vue'
 import { onAnchorClick } from '../../utils/scroll'
+import { useResume } from '../../composables/useResume'
 
 const props = defineProps({
   profile: { type: Object, required: true },
 })
+
+const { generating, downloadResume } = useResume()
 
 const photoOk = ref(true)
 watch(
@@ -91,10 +94,10 @@ onBeforeUnmount(() => clearTimeout(timer))
         </p>
 
         <div class="mt-8 flex flex-wrap gap-3">
-          <a v-if="profile.resumeUrl" :href="profile.resumeUrl" download class="btn-primary">
+          <button type="button" class="btn-primary" :disabled="generating" @click="downloadResume">
             <AppIcon name="download" :size="17" />
-            Download resume
-          </a>
+            {{ generating ? 'Building PDF…' : 'Download resume' }}
+          </button>
           <a href="#contact" class="btn-ghost" @click="onAnchorClick($event, 'contact')">
             <AppIcon name="mail" :size="17" />
             Hire me

@@ -39,7 +39,15 @@ jobs:
           VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
           VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
-          VITE_ADMIN_EMAIL: ${{ secrets.VITE_ADMIN_EMAIL }}
+          # Admin sign-in. Copy these four from shihab-portfolio/.env.local after
+          # running `npm run set-admin-password`, and add them as repository
+          # secrets. Without them the deployed admin screen has no credentials
+          # and nobody can sign in. The hash is safe to ship; the password is not
+          # derivable from it.
+          VITE_ADMIN_ID: ${{ secrets.VITE_ADMIN_ID }}
+          VITE_ADMIN_PW_SALT: ${{ secrets.VITE_ADMIN_PW_SALT }}
+          VITE_ADMIN_PW_HASH: ${{ secrets.VITE_ADMIN_PW_HASH }}
+          VITE_ADMIN_PW_ITERATIONS: ${{ secrets.VITE_ADMIN_PW_ITERATIONS }}
 
       - run: touch dist/.nojekyll
 

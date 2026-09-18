@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Local env / secrets — never commit these.
+# .env.local holds the admin credential hash written by `npm run set-admin-password`.
+.env
+.env.*
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

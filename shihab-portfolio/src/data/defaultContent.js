@@ -63,8 +63,11 @@ export const defaultContent = {
     phone: '+8801622789743',
     location: 'Dhaka, Bangladesh',
     availability: 'Open to full-stack & QA automation roles',
-    photoUrl: './profile.jpg',
-    resumeUrl: './MD-Shihab-Hossain-Resume.pdf',
+    photoUrl: './Shihab_picture.jpg',
+    // Left empty on purpose: the résumé PDF is generated from this content at
+    // click time (src/utils/resumePdf.js). Set this to an absolute http(s) URL
+    // only if you want the buttons to link to an externally hosted file instead.
+    resumeUrl: '',
     stats: [
       { id: uid('stat'), value: '4+', label: 'Years in software' },
       { id: uid('stat'), value: '8', label: 'Professional products' },

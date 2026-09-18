@@ -3,11 +3,14 @@ import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import AppIcon from './AppIcon.vue'
 import { onAnchorClick } from '../utils/scroll'
+import { useResume } from '../composables/useResume'
 
 const props = defineProps({
   profile: { type: Object, required: true },
   links: { type: Array, default: () => [] },
 })
+
+const { generating, downloadResume } = useResume()
 
 const scrolled = ref(false)
 const open = ref(false)
@@ -91,15 +94,15 @@ const initials = (name) =>
       </ul>
 
       <div class="flex items-center gap-2">
-        <a
-          v-if="profile.resumeUrl"
-          :href="profile.resumeUrl"
-          download
+        <button
+          type="button"
           class="btn-primary btn-sm hidden px-4 py-2 sm:inline-flex"
+          :disabled="generating"
+          @click="downloadResume"
         >
           <AppIcon name="download" :size="15" />
-          Resume
-        </a>
+          {{ generating ? 'Building…' : 'Resume' }}
+        </button>
         <RouterLink
           to="/admin"
           class="grid h-9 w-9 place-items-center rounded-lg border border-ink-200 bg-white text-ink-500 transition hover:text-ink-900"
@@ -131,11 +134,16 @@ const initials = (name) =>
               {{ link.title }}
             </a>
           </li>
-          <li v-if="profile.resumeUrl" class="pt-2">
-            <a :href="profile.resumeUrl" download class="btn-primary w-full">
+          <li class="pt-2">
+            <button
+              type="button"
+              class="btn-primary w-full"
+              :disabled="generating"
+              @click="downloadResume(); open = false"
+            >
               <AppIcon name="download" :size="16" />
-              Download resume
-            </a>
+              {{ generating ? 'Building PDF…' : 'Download resume' }}
+            </button>
           </li>
         </ul>
       </div>

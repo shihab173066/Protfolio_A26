@@ -25,23 +25,50 @@ function patchSocial(index, key, value) {
 
 const ICONS = ['link', 'code', 'users', 'doc', 'cap', 'spark', 'briefcase', 'mail']
 
-function onPhotoFile(event) {
-  const file = event.target.files?.[0]
+const UPLOAD_ENDPOINT = '/__upload-public'
+
+function embedAsDataUrl(file) {
+  const reader = new FileReader()
+  reader.onload = () => {
+    patch('photoUrl', reader.result)
+    photoNote.value = 'Saved inside the content document (base64).'
+  }
+  reader.readAsDataURL(file)
+}
+
+async function onPhotoFile(event) {
+  const input = event.target
+  const file = input.files?.[0]
   if (!file) return
+  input.value = ''
+
   if (!file.type.startsWith('image/')) {
     photoNote.value = 'Please choose an image file.'
     return
   }
-  if (file.size > 400 * 1024) {
-    photoNote.value = 'Image is larger than 400 KB — put it in /public and use a path like ./profile.jpg instead.'
+
+  photoNote.value = 'Uploading…'
+
+  // The dev server writes the file into `public/uploads/`; a static build has no
+  // such endpoint, so fall back to embedding small images in the document.
+  try {
+    const res = await fetch(`${UPLOAD_ENDPOINT}?name=${encodeURIComponent(file.name)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': file.type },
+      body: file,
+    })
+    const data = await res.json()
+    if (!res.ok) throw new Error(data.error || 'Upload failed.')
+    patch('photoUrl', data.url)
+    photoNote.value = `Saved to public/uploads — referenced as ${data.url}`
     return
+  } catch (error) {
+    if (file.size > 400 * 1024) {
+      photoNote.value = `${error.message} Drop the image in public/ manually and use a path like ./profile.jpg.`
+      return
+    }
+    embedAsDataUrl(file)
   }
-  const reader = new FileReader()
-  reader.onload = () => {
-    patch('photoUrl', reader.result)
-    photoNote.value = 'Embedded in the content document.'
-  }
-  reader.readAsDataURL(file)
 }
 </script>
 
@@ -114,9 +141,12 @@ function onPhotoFile(event) {
           <input class="field" type="text" :value="profile.location" @input="patch('location', $event.target.value)" />
         </div>
         <div>
-          <label class="label">Résumé PDF path or URL</label>
-          <input class="field" type="text" :value="profile.resumeUrl" @input="patch('resumeUrl', $event.target.value)" />
-          <p class="mt-1 text-[11px] text-ink-400">Drop the PDF in <code>public/</code> and use <code>./file.pdf</code>.</p>
+          <label class="label">Résumé override URL (optional)</label>
+          <input class="field" type="text" :value="profile.resumeUrl" placeholder="Leave empty to auto-generate" @input="patch('resumeUrl', $event.target.value)" />
+          <p class="mt-1 text-[11px] text-ink-400">
+            Leave empty: the résumé PDF is generated from this content on click. Set a full
+            <code>https://</code> link to point the buttons at a hosted file instead.
+          </p>
         </div>
         <div class="sm:col-span-2">
           <label class="label">Photo path or URL</label>

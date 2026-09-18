@@ -3,9 +3,8 @@ import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import AppIcon from '../AppIcon.vue'
 import { useAuth } from '../../composables/useAuth'
-import { isFirebaseConfigured } from '../../firebase'
 
-const { authError, busy, login, usesFirebaseAuth } = useAuth()
+const { authError, busy, login, credentialsConfigured } = useAuth()
 
 const id = ref('')
 const password = ref('')
@@ -51,7 +50,7 @@ async function submit() {
               class="field border-white/10 bg-white/5 text-white placeholder:text-ink-500"
               type="text"
               autocomplete="username"
-              placeholder="admin"
+              placeholder="you@yoursite"
               required
             />
           </div>
@@ -83,21 +82,19 @@ async function submit() {
             {{ authError }}
           </p>
 
-          <button type="submit" class="btn-primary w-full" :disabled="busy">
+          <button type="submit" class="btn-primary w-full" :disabled="busy || !credentialsConfigured">
             <AppIcon name="lock" :size="16" />
             {{ busy ? 'Verifying…' : 'Sign in' }}
           </button>
         </div>
 
-        <p class="mt-6 rounded-lg border border-white/10 bg-white/5 p-3 text-[11px] leading-5 text-ink-400">
-          <template v-if="usesFirebaseAuth">
-            Firebase Authentication is active — use your admin account password.
-          </template>
-          <template v-else>
-            Development credentials: <span class="font-mono text-ink-200">admin / password1234</span>.
-            <span v-if="!isFirebaseConfigured"> Firebase is not configured, so changes save to this browser only.</span>
-            Replace this with Firebase Auth + Firestore rules before publishing.
-          </template>
+        <p
+          v-if="!credentialsConfigured"
+          class="mt-6 rounded-lg border border-amber-400/20 bg-amber-400/10 p-3 text-[11px] leading-5 text-amber-200"
+        >
+          No admin credentials in this build. Run
+          <code class="rounded bg-black/30 px-1">npm run set-admin-password</code>
+          and restart the dev server.
         </p>
       </form>
     </div>
