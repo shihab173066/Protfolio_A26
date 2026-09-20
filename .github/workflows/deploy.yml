@@ -31,6 +31,41 @@ jobs:
 
       - run: npm ci
 
+      # A missing secret is not an error to Actions — `${{ secrets.X }}` simply
+      # expands to an empty string, Vite inlines "", isFirebaseConfigured goes
+      # false and the build succeeds while shipping a site with no sign-in and
+      # no live content. Fail loudly here instead, and name what is missing.
+      - name: Verify Firebase secrets reached this job
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+        run: |
+          missing=0
+          for name in VITE_FIREBASE_API_KEY VITE_FIREBASE_AUTH_DOMAIN VITE_FIREBASE_PROJECT_ID \
+                      VITE_FIREBASE_STORAGE_BUCKET VITE_FIREBASE_MESSAGING_SENDER_ID VITE_FIREBASE_APP_ID; do
+            value="${!name}"
+            # Length only — never the value. Actions masks secrets in logs, but
+            # printing a length keeps that guarantee independent of masking.
+            if [ -n "$value" ]; then
+              echo "  OK      $name (${#value} chars)"
+            else
+              echo "  MISSING $name"
+              missing=1
+            fi
+          done
+          if [ "$missing" -eq 1 ]; then
+            echo
+            echo "Those secrets are empty in this job. Add them as *repository* secrets at"
+            echo "Settings -> Secrets and variables -> Actions -> Repository secrets."
+            echo "Environment secrets and Variables are NOT visible here: this job declares"
+            echo "no 'environment:', and a secrets.* lookup cannot read a Variable."
+            exit 1
+          fi
+
       - run: npm run build
         env:
           # Firebase web config. Without these the deployed site falls back to

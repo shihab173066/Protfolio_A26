@@ -1,0 +1,2422 @@
+{
+  "name": "projects/shihab-portfolio-ee9af/databases/(default)/documents/portfolio/content",
+  "fields": {
+    "sections": {
+      "arrayValue": {
+        "values": [
+          {
+            "mapValue": {
+              "fields": {
+                "title": {
+                  "stringValue": "About me"
+                },
+                "type": {
+                  "stringValue": "about"
+                },
+                "inNav": {
+                  "booleanValue": true
+                },
+                "body": {
+                  "stringValue": "As a versatile Full-Stack Developer and seasoned QA Engineer, I deliver robust, end-to-end software solutions. I architect responsive frontends using Vue.js and TypeScript, and build scalable backend APIs with Django. Complementing my development expertise, I design sophisticated automated testing pipelines using Playwright and GitHub Actions to rigorously validate every release. Ultimately, I don't just ship features—I engineer the safety nets that guarantee they perform flawlessly."
+                },
+                "visible": {
+                  "booleanValue": true
+                },
+                "items": {
+                  "arrayValue": {
+                    "values": [
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "str-1"
+                            },
+                            "tags": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Full-Stack Web Development"
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "title": {
+                              "stringValue": "Automated, API & Manual Testing"
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "id": {
+                              "stringValue": "str-2"
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {}
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Programming"
+                            },
+                            "id": {
+                              "stringValue": "str-3"
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {}
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {}
+                            },
+                            "id": {
+                              "stringValue": "str-4"
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Client Communication"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "title": {
+                              "stringValue": "Agile Methodology"
+                            },
+                            "tags": {
+                              "arrayValue": {}
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "str-5"
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "tags": {
+                              "arrayValue": {}
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Web Technologies"
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "str-6"
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "description": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "str-7"
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {}
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "title": {
+                              "stringValue": "SDLC and STLC"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "id": {
+                              "stringValue": "str-8"
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {}
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "AI Technologies"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "id": {
+                  "stringValue": "about"
+                },
+                "subtitle": {
+                  "stringValue": "Full-stack engineering with a quality-first mindset"
+                }
+              }
+            }
+          },
+          {
+            "mapValue": {
+              "fields": {
+                "type": {
+                  "stringValue": "skills"
+                },
+                "title": {
+                  "stringValue": "Skills & abilities"
+                },
+                "subtitle": {
+                  "stringValue": "The tools I reach for every day"
+                },
+                "visible": {
+                  "booleanValue": true
+                },
+                "items": {
+                  "arrayValue": {
+                    "values": [
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "badge": {
+                              "stringValue": "code"
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Vue.js (Options API)"
+                                  },
+                                  {
+                                    "stringValue": "Vue.js (Composition API)"
+                                  },
+                                  {
+                                    "stringValue": "TypeScript"
+                                  },
+                                  {
+                                    "stringValue": "JavaScript"
+                                  },
+                                  {
+                                    "stringValue": "HTML"
+                                  },
+                                  {
+                                    "stringValue": "CSS"
+                                  },
+                                  {
+                                    "stringValue": "JSON"
+                                  }
+                                ]
+                              }
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Frontend & Web Development"
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "sk-frontend"
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Backend Development"
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Python"
+                                  },
+                                  {
+                                    "stringValue": "Django"
+                                  },
+                                  {
+                                    "stringValue": "Django REST Framework"
+                                  },
+                                  {
+                                    "stringValue": "SQL"
+                                  }
+                                ]
+                              }
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "sk-backend"
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "badge": {
+                              "stringValue": "server"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "badge": {
+                              "stringValue": "shield"
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Playwright (TypeScript)"
+                                  },
+                                  {
+                                    "stringValue": "Playwright (Python + Pytest)"
+                                  },
+                                  {
+                                    "stringValue": "Selenium"
+                                  },
+                                  {
+                                    "stringValue": "Manual Testing"
+                                  },
+                                  {
+                                    "stringValue": "API Testing (Postman)"
+                                  }
+                                ]
+                              }
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Test Automation & QA"
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "sk-qa"
+                            },
+                            "description": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "badge": {
+                              "stringValue": "rocket"
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "sk-cicd"
+                            },
+                            "title": {
+                              "stringValue": "CI/CD"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "GitHub Actions"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Test Case Writing"
+                                  },
+                                  {
+                                    "stringValue": "Bug Reporting"
+                                  },
+                                  {
+                                    "stringValue": "Test Plans"
+                                  },
+                                  {
+                                    "stringValue": "Process Documentation"
+                                  }
+                                ]
+                              }
+                            },
+                            "title": {
+                              "stringValue": "Documentation & Reporting"
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "badge": {
+                              "stringValue": "doc"
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "sk-docs"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "id": {
+                              "stringValue": "sk-tools"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Tools"
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "VS Code"
+                                  },
+                                  {
+                                    "stringValue": "Git / GitHub"
+                                  },
+                                  {
+                                    "stringValue": "Postman"
+                                  },
+                                  {
+                                    "stringValue": "XAMPP"
+                                  }
+                                ]
+                              }
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "badge": {
+                              "stringValue": "tool"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Claude.ai"
+                                  },
+                                  {
+                                    "stringValue": "ChatGPT"
+                                  },
+                                  {
+                                    "stringValue": "Gemini"
+                                  }
+                                ]
+                              }
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "AI Tools"
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "badge": {
+                              "stringValue": "spark"
+                            },
+                            "id": {
+                              "stringValue": "sk-ai"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "title": {
+                              "stringValue": "Testing Concepts"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "SDLC"
+                                  },
+                                  {
+                                    "stringValue": "STLC"
+                                  },
+                                  {
+                                    "stringValue": "Bug Life Cycle"
+                                  }
+                                ]
+                              }
+                            },
+                            "badge": {
+                              "stringValue": "shield"
+                            },
+                            "id": {
+                              "stringValue": "sk-concepts"
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "badge": {
+                              "stringValue": "board"
+                            },
+                            "title": {
+                              "stringValue": "Agile & Project Management"
+                            },
+                            "id": {
+                              "stringValue": "sk-agile"
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Jira"
+                                  },
+                                  {
+                                    "stringValue": "ClickUp"
+                                  },
+                                  {
+                                    "stringValue": "Monday.com"
+                                  },
+                                  {
+                                    "stringValue": "Confluence"
+                                  }
+                                ]
+                              }
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "CachyOS"
+                                  },
+                                  {
+                                    "stringValue": "Ubuntu"
+                                  },
+                                  {
+                                    "stringValue": "Windows"
+                                  },
+                                  {
+                                    "stringValue": "Mac"
+                                  }
+                                ]
+                              }
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "badge": {
+                              "stringValue": "tool"
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Operating Systems"
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "sk-os"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "sk-collab"
+                            },
+                            "badge": {
+                              "stringValue": "users"
+                            },
+                            "title": {
+                              "stringValue": "Productivity & Collaboration"
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "MS Office"
+                                  },
+                                  {
+                                    "stringValue": "MS Teams"
+                                  },
+                                  {
+                                    "stringValue": "Outlook"
+                                  },
+                                  {
+                                    "stringValue": "Zoho"
+                                  },
+                                  {
+                                    "stringValue": "Slack"
+                                  },
+                                  {
+                                    "stringValue": "Canva"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "title": {
+                              "stringValue": "Professional Skills"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Problem-solving"
+                                  },
+                                  {
+                                    "stringValue": "Team Collaboration"
+                                  },
+                                  {
+                                    "stringValue": "Communication"
+                                  }
+                                ]
+                              }
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "sk-prof"
+                            },
+                            "badge": {
+                              "stringValue": "users"
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "inNav": {
+                  "booleanValue": true
+                },
+                "body": {
+                  "stringValue": ""
+                },
+                "id": {
+                  "stringValue": "skills"
+                }
+              }
+            }
+          },
+          {
+            "mapValue": {
+              "fields": {
+                "visible": {
+                  "booleanValue": true
+                },
+                "subtitle": {
+                  "stringValue": "Where I have built, tested and shipped"
+                },
+                "items": {
+                  "arrayValue": {
+                    "values": [
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "badge": {
+                              "stringValue": "Full-Time"
+                            },
+                            "subtitle": {
+                              "stringValue": "Allucent.io"
+                            },
+                            "id": {
+                              "stringValue": "exp-allucent"
+                            },
+                            "meta": {
+                              "stringValue": "April 2026 – Present"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Vue.js"
+                                  },
+                                  {
+                                    "stringValue": "TypeScript"
+                                  },
+                                  {
+                                    "stringValue": "REST APIs"
+                                  },
+                                  {
+                                    "stringValue": "Postman"
+                                  }
+                                ]
+                              }
+                            },
+                            "title": {
+                              "stringValue": "Software Developer"
+                            },
+                            "bullets": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Developed and maintained responsive web applications using Vue.js, TypeScript, JavaScript, HTML and CSS."
+                                  },
+                                  {
+                                    "stringValue": "Built reusable Vue.js components and implemented efficient, scalable UI features following modern frontend practices."
+                                  },
+                                  {
+                                    "stringValue": "Integrated REST APIs and managed application state to deliver reliable, data-driven user experiences."
+                                  },
+                                  {
+                                    "stringValue": "Performed API testing using Postman."
+                                  },
+                                  {
+                                    "stringValue": "Collaborated with cross-functional and US-based Agile teams."
+                                  },
+                                  {
+                                    "stringValue": "Identified and resolved UI and application issues."
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "subtitle": {
+                              "stringValue": "Alpha FMC"
+                            },
+                            "id": {
+                              "stringValue": "exp-alpha"
+                            },
+                            "badge": {
+                              "stringValue": "Full-Time"
+                            },
+                            "title": {
+                              "stringValue": "QA Engineer II – Automation & Manual (Promoted)"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "meta": {
+                              "stringValue": "April 2025 – Present"
+                            },
+                            "description": {
+                              "stringValue": "Associate QA Engineer – Automation & Manual · April 2025 – April 2026"
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Playwright"
+                                  },
+                                  {
+                                    "stringValue": "TypeScript"
+                                  },
+                                  {
+                                    "stringValue": "GitHub Actions"
+                                  },
+                                  {
+                                    "stringValue": "Regression Testing"
+                                  }
+                                ]
+                              }
+                            },
+                            "bullets": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Developed and maintained scalable end-to-end automation frameworks using Playwright with TypeScript, covering functional, regression, smoke and cross-browser testing to improve coverage and release confidence."
+                                  },
+                                  {
+                                    "stringValue": "Integrated Playwright suites into CI/CD pipelines using GitHub Actions, enabling scheduled and continuous execution, faster defect feedback and reliable deployment validation."
+                                  },
+                                  {
+                                    "stringValue": "Designed and executed comprehensive manual test strategies, including functional and regression test cases aligned with business requirements."
+                                  },
+                                  {
+                                    "stringValue": "Collaborated closely with developers, business analysts and cross-functional Agile teams."
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "title": {
+                              "stringValue": "Software Developer"
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Django"
+                                  },
+                                  {
+                                    "stringValue": "DRF"
+                                  },
+                                  {
+                                    "stringValue": "Django ORM"
+                                  },
+                                  {
+                                    "stringValue": "Authentication"
+                                  }
+                                ]
+                              }
+                            },
+                            "subtitle": {
+                              "stringValue": "Intelliz Lab"
+                            },
+                            "meta": {
+                              "stringValue": "Dec 2024 – May 2026"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "badge": {
+                              "stringValue": "Part-Time"
+                            },
+                            "id": {
+                              "stringValue": "exp-intelliz"
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "bullets": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Developed and optimised RESTful APIs using Django and Django REST Framework, implementing scalable database models with the Django ORM."
+                                  },
+                                  {
+                                    "stringValue": "Collaborated with senior developers to build, debug and enhance application features."
+                                  },
+                                  {
+                                    "stringValue": "Designed and implemented backend logic, authentication and API integrations in Django."
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Python"
+                                  },
+                                  {
+                                    "stringValue": "Playwright"
+                                  },
+                                  {
+                                    "stringValue": "API Testing"
+                                  }
+                                ]
+                              }
+                            },
+                            "meta": {
+                              "stringValue": "September 2024 – May 2025"
+                            },
+                            "badge": {
+                              "stringValue": "Full-Time"
+                            },
+                            "subtitle": {
+                              "stringValue": "Bit Mascot (Pvt.) Ltd."
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "SQA Engineer"
+                            },
+                            "bullets": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Owned the end-to-end testing lifecycle, including manual and automation testing using Python and Playwright, covering API, functional and regression testing."
+                                  }
+                                ]
+                              }
+                            },
+                            "id": {
+                              "stringValue": "exp-bitmascot"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "badge": {
+                              "stringValue": "Full-Time"
+                            },
+                            "meta": {
+                              "stringValue": "May 2022 – August 2024"
+                            },
+                            "id": {
+                              "stringValue": "exp-radiant"
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Playwright"
+                                  },
+                                  {
+                                    "stringValue": "PyTest"
+                                  },
+                                  {
+                                    "stringValue": "Healthcare Systems"
+                                  }
+                                ]
+                              }
+                            },
+                            "bullets": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Manual and automation testing of healthcare and workforce management systems."
+                                  },
+                                  {
+                                    "stringValue": "Built Playwright (Python / PyTest) automation to enhance coverage and efficiency."
+                                  }
+                                ]
+                              }
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "subtitle": {
+                              "stringValue": "Radiant Data Systems Ltd."
+                            },
+                            "title": {
+                              "stringValue": "Coordinator (SQA)"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "badge": {
+                              "stringValue": "Part-Time"
+                            },
+                            "subtitle": {
+                              "stringValue": "Catalyst Solutions"
+                            },
+                            "bullets": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Developed interactive Excel dashboards and analytical reports, ensuring data accuracy and delivering actionable business insights through clear communication with U.S.-based clients."
+                                  }
+                                ]
+                              }
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Excel"
+                                  },
+                                  {
+                                    "stringValue": "Dashboards"
+                                  },
+                                  {
+                                    "stringValue": "Client Communication"
+                                  }
+                                ]
+                              }
+                            },
+                            "meta": {
+                              "stringValue": "June 2022 – May 2023"
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "title": {
+                              "stringValue": "Associate (Data Visualizer)"
+                            },
+                            "id": {
+                              "stringValue": "exp-catalyst"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "bullets": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Assisted in project coordination, scheduling and documentation while conducting software testing and reporting defects."
+                                  }
+                                ]
+                              }
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Documentation"
+                                  },
+                                  {
+                                    "stringValue": "Software Testing"
+                                  }
+                                ]
+                              }
+                            },
+                            "meta": {
+                              "stringValue": "January 2022 – May 2022"
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Research Assistant"
+                            },
+                            "badge": {
+                              "stringValue": "Full-Time"
+                            },
+                            "id": {
+                              "stringValue": "exp-iar"
+                            },
+                            "subtitle": {
+                              "stringValue": "Institute for Advance Research"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "body": {
+                  "stringValue": ""
+                },
+                "inNav": {
+                  "booleanValue": true
+                },
+                "type": {
+                  "stringValue": "timeline"
+                },
+                "title": {
+                  "stringValue": "Work experience"
+                },
+                "id": {
+                  "stringValue": "experience"
+                }
+              }
+            }
+          },
+          {
+            "mapValue": {
+              "fields": {
+                "id": {
+                  "stringValue": "projects"
+                },
+                "body": {
+                  "stringValue": ""
+                },
+                "items": {
+                  "arrayValue": {
+                    "values": [
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Allucent"
+                            },
+                            "subtitle": {
+                              "stringValue": "Allucent.io"
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "description": {
+                              "stringValue": "Cloud-based construction project management system."
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Vue.js"
+                                  },
+                                  {
+                                    "stringValue": "TypeScript"
+                                  },
+                                  {
+                                    "stringValue": "REST APIs"
+                                  }
+                                ]
+                              }
+                            },
+                            "id": {
+                              "stringValue": "pr-allucent"
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Playwright"
+                                  },
+                                  {
+                                    "stringValue": "TypeScript"
+                                  },
+                                  {
+                                    "stringValue": "Regression"
+                                  }
+                                ]
+                              }
+                            },
+                            "subtitle": {
+                              "stringValue": "Alpha FMC"
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "pr-farmfamily"
+                            },
+                            "title": {
+                              "stringValue": "Farm Family UWWB BOP"
+                            },
+                            "description": {
+                              "stringValue": "Insurance underwriting and policy management system."
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Django"
+                                  },
+                                  {
+                                    "stringValue": "DRF"
+                                  },
+                                  {
+                                    "stringValue": "SQL"
+                                  }
+                                ]
+                              }
+                            },
+                            "subtitle": {
+                              "stringValue": "Intelliz Lab"
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "id": {
+                              "stringValue": "pr-desher"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Desher School"
+                            },
+                            "description": {
+                              "stringValue": "All-in-one school management system with student, teacher and admin portals."
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "id": {
+                              "stringValue": "pr-lockton"
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "subtitle": {
+                              "stringValue": "Alpha FMC"
+                            },
+                            "title": {
+                              "stringValue": "Lockton"
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Playwright"
+                                  },
+                                  {
+                                    "stringValue": "CI/CD"
+                                  },
+                                  {
+                                    "stringValue": "Manual QA"
+                                  }
+                                ]
+                              }
+                            },
+                            "description": {
+                              "stringValue": "Financial, transaction and insurance management system."
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "pr-eventbookings"
+                            },
+                            "description": {
+                              "stringValue": "Event management system."
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Python"
+                                  },
+                                  {
+                                    "stringValue": "Playwright"
+                                  },
+                                  {
+                                    "stringValue": "API Testing"
+                                  }
+                                ]
+                              }
+                            },
+                            "title": {
+                              "stringValue": "EventBookings"
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "subtitle": {
+                              "stringValue": "Bit Mascot (Pvt.) Ltd."
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Functional Testing"
+                                  },
+                                  {
+                                    "stringValue": "Regression"
+                                  }
+                                ]
+                              }
+                            },
+                            "description": {
+                              "stringValue": "Product and billing management system."
+                            },
+                            "subtitle": {
+                              "stringValue": "Bit Mascot (Pvt.) Ltd."
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "Autobill"
+                            },
+                            "id": {
+                              "stringValue": "pr-autobill"
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "pr-clubeez"
+                            },
+                            "title": {
+                              "stringValue": "Clubeez"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "description": {
+                              "stringValue": "Automated email marketing system."
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Automation"
+                                  },
+                                  {
+                                    "stringValue": "API Testing"
+                                  }
+                                ]
+                              }
+                            },
+                            "subtitle": {
+                              "stringValue": "Bit Mascot (Pvt.) Ltd."
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Playwright"
+                                  },
+                                  {
+                                    "stringValue": "PyTest"
+                                  },
+                                  {
+                                    "stringValue": "CI/CD"
+                                  }
+                                ]
+                              }
+                            },
+                            "subtitle": {
+                              "stringValue": "Radiant Data Systems Ltd."
+                            },
+                            "id": {
+                              "stringValue": "pr-medefis"
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "description": {
+                              "stringValue": "Healthcare, clinician, compliance, task and workforce management system."
+                            },
+                            "title": {
+                              "stringValue": "Medefis"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "id": {
+                              "stringValue": "item-mu7ghya6-0tzow"
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "description": {
+                              "stringValue": "An advanced workforce technology platform helps healthcare organizations optimize labor planning, scheduling, staffing, and deployment."
+                            },
+                            "title": {
+                              "stringValue": "ShiftWise"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "subtitle": {
+                              "stringValue": "Radiant Data Systems Ltd."
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Playwright"
+                                  },
+                                  {
+                                    "stringValue": "Typescript"
+                                  },
+                                  {
+                                    "stringValue": "CI/CD"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "inNav": {
+                  "booleanValue": true
+                },
+                "title": {
+                  "stringValue": "Professional projects"
+                },
+                "type": {
+                  "stringValue": "cards"
+                },
+                "subtitle": {
+                  "stringValue": "Products I have helped build and safeguard"
+                },
+                "visible": {
+                  "booleanValue": true
+                }
+              }
+            }
+          },
+          {
+            "mapValue": {
+              "fields": {
+                "id": {
+                  "stringValue": "certifications"
+                },
+                "inNav": {
+                  "booleanValue": true
+                },
+                "visible": {
+                  "booleanValue": true
+                },
+                "items": {
+                  "arrayValue": {
+                    "values": [
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "subtitle": {
+                              "stringValue": "Certificate"
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "title": {
+                              "stringValue": "OSTAD — Full Stack Web Development (Python & Django)"
+                            },
+                            "id": {
+                              "stringValue": "cert-ostad"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "bullets": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "E-Commerce (Django)"
+                                  },
+                                  {
+                                    "stringValue": "Students Study Portal (Django)"
+                                  },
+                                  {
+                                    "stringValue": "Todo Application (Django)"
+                                  },
+                                  {
+                                    "stringValue": "Social Media Application (Django)"
+                                  }
+                                ]
+                              }
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Python"
+                                  },
+                                  {
+                                    "stringValue": "Django"
+                                  },
+                                  {
+                                    "stringValue": "Full Stack"
+                                  }
+                                ]
+                              }
+                            },
+                            "meta": {
+                              "stringValue": "Aug 2024 – Feb 2025"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "title": {
+                              "stringValue": "BUG RESISTANCE — SQA Certificate"
+                            },
+                            "bullets": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "HRM Website Test using Playwright"
+                                  },
+                                  {
+                                    "stringValue": "Automated Website Test using Selenium"
+                                  }
+                                ]
+                              }
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "id": {
+                              "stringValue": "cert-bug"
+                            },
+                            "subtitle": {
+                              "stringValue": "Certificate"
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "meta": {
+                              "stringValue": "Jan 2024 – Jun 2024"
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Playwright"
+                                  },
+                                  {
+                                    "stringValue": "Selenium"
+                                  },
+                                  {
+                                    "stringValue": "SQA"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "type": {
+                  "stringValue": "list"
+                },
+                "body": {
+                  "stringValue": ""
+                },
+                "subtitle": {
+                  "stringValue": "Structured programmes and the projects they produced"
+                },
+                "title": {
+                  "stringValue": "Training & certifications"
+                }
+              }
+            }
+          },
+          {
+            "mapValue": {
+              "fields": {
+                "items": {
+                  "arrayValue": {
+                    "values": [
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "title": {
+                              "stringValue": "B.Sc. in Computer Science & Engineering"
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {}
+                            },
+                            "id": {
+                              "stringValue": "edu-uiu"
+                            },
+                            "meta": {
+                              "stringValue": "Passing Year: 2022"
+                            },
+                            "subtitle": {
+                              "stringValue": "United International University"
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "title": {
+                              "stringValue": "DocBook: Online Interactive Health-Care"
+                            },
+                            "bullets": {
+                              "arrayValue": {}
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Publication"
+                                  }
+                                ]
+                              }
+                            },
+                            "links": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "mapValue": {
+                                      "fields": {
+                                        "label": {
+                                          "stringValue": "Read publication"
+                                        },
+                                        "id": {
+                                          "stringValue": "link-mu08xrmt-yhsw2"
+                                        },
+                                        "url": {
+                                          "stringValue": "https://doi.org/10.1109/STI53101.2021.9732608"
+                                        }
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            "meta": {
+                              "stringValue": "Dec 18–19, 2021 · Dhaka, Bangladesh"
+                            },
+                            "id": {
+                              "stringValue": "edu-pub"
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "subtitle": {
+                              "stringValue": "3rd International Conference on Sustainable Technologies for Industry 4.0 (STI)"
+                            },
+                            "description": {
+                              "stringValue": "DOI: 10.1109/STI53101.2021.9732608"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "bullets": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Jan 2024 — 1st Employee of the Month"
+                                  },
+                                  {
+                                    "stringValue": "June 2024 — 2nd Employee of the Month"
+                                  }
+                                ]
+                              }
+                            },
+                            "subtitle": {
+                              "stringValue": "Radiant Data Systems Ltd."
+                            },
+                            "title": {
+                              "stringValue": "Honors & awards"
+                            },
+                            "tags": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "Recognition"
+                                  }
+                                ]
+                              }
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "id": {
+                              "stringValue": "edu-awards"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "bullets": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "English — Fluent"
+                                  },
+                                  {
+                                    "stringValue": "Bangla — Native"
+                                  }
+                                ]
+                              }
+                            },
+                            "description": {
+                              "stringValue": ""
+                            },
+                            "title": {
+                              "stringValue": "Languages"
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "id": {
+                              "stringValue": "edu-lang"
+                            },
+                            "subtitle": {
+                              "stringValue": ""
+                            },
+                            "meta": {
+                              "stringValue": ""
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "tags": {
+                              "arrayValue": {}
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "visible": {
+                  "booleanValue": true
+                },
+                "inNav": {
+                  "booleanValue": true
+                },
+                "body": {
+                  "stringValue": ""
+                },
+                "type": {
+                  "stringValue": "list"
+                },
+                "id": {
+                  "stringValue": "education"
+                },
+                "subtitle": {
+                  "stringValue": "Academics, publication, awards and languages"
+                },
+                "title": {
+                  "stringValue": "Education & recognition"
+                }
+              }
+            }
+          },
+          {
+            "mapValue": {
+              "fields": {
+                "items": {
+                  "arrayValue": {
+                    "values": [
+                      {
+                        "mapValue": {
+                          "fields": {
+                            "bullets": {
+                              "arrayValue": {
+                                "values": [
+                                  {
+                                    "stringValue": "md.ariftk@gmail.com"
+                                  },
+                                  {
+                                    "stringValue": "muhammed@bitmascot.com"
+                                  }
+                                ]
+                              }
+                            },
+                            "meta": {
+                              "stringValue": "Reference"
+                            },
+                            "title": {
+                              "stringValue": "Muhammed Arif"
+                            },
+                            "id": {
+                              "stringValue": "ref-arif"
+                            },
+                            "subtitle": {
+                              "stringValue": "QA Manager, Bit Mascot (Pvt.) Ltd."
+                            },
+                            "tags": {
+                              "arrayValue": {}
+                            },
+                            "links": {
+                              "arrayValue": {}
+                            },
+                            "badge": {
+                              "stringValue": ""
+                            },
+                            "description": {
+                              "stringValue": ""
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "inNav": {
+                  "booleanValue": true
+                },
+                "body": {
+                  "stringValue": "Have a product to build or a test suite to rescue? Send me a message — I usually reply within a day."
+                },
+                "type": {
+                  "stringValue": "contact"
+                },
+                "id": {
+                  "stringValue": "contact"
+                },
+                "title": {
+                  "stringValue": "Get in touch"
+                },
+                "visible": {
+                  "booleanValue": true
+                },
+                "subtitle": {
+                  "stringValue": "Available for Full-Stack Development and QA Automation work"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "version": {
+      "integerValue": "1"
+    },
+    "theme": {
+      "mapValue": {
+        "fields": {
+          "accent": {
+            "stringValue": "#2563eb"
+          }
+        }
+      }
+    },
+    "profile": {
+      "mapValue": {
+        "fields": {
+          "phone": {
+            "stringValue": "+8801622789743"
+          },
+          "resumeUrl": {
+            "stringValue": "./MD-Shihab-Hossain-Resume.pdf"
+          },
+          "location": {
+            "stringValue": "Dhaka, Bangladesh"
+          },
+          "name": {
+            "stringValue": "Md. Shihab Hossain"
+          },
+          "socials": {
+            "arrayValue": {
+              "values": [
+                {
+                  "mapValue": {
+                    "fields": {
+                      "label": {
+                        "stringValue": "GitHub"
+                      },
+                      "id": {
+                        "stringValue": "social-mu08xrmt-wk5hx"
+                      },
+                      "icon": {
+                        "stringValue": "link"
+                      },
+                      "url": {
+                        "stringValue": "https://github.com/shihab"
+                      }
+                    }
+                  }
+                },
+                {
+                  "mapValue": {
+                    "fields": {
+                      "id": {
+                        "stringValue": "social-mu08xrmt-amhgr"
+                      },
+                      "icon": {
+                        "stringValue": "link"
+                      },
+                      "label": {
+                        "stringValue": "LinkedIn"
+                      },
+                      "url": {
+                        "stringValue": "https://www.linkedin.com/in/mdshihab"
+                      }
+                    }
+                  }
+                },
+                {
+                  "mapValue": {
+                    "fields": {
+                      "icon": {
+                        "stringValue": "link"
+                      },
+                      "id": {
+                        "stringValue": "social-mu08xrmt-5rrgt"
+                      },
+                      "url": {
+                        "stringValue": "https://www.hackerrank.com/shihab"
+                      },
+                      "label": {
+                        "stringValue": "HackerRank"
+                      }
+                    }
+                  }
+                },
+                {
+                  "mapValue": {
+                    "fields": {
+                      "id": {
+                        "stringValue": "social-mu08xrmt-f5aqd"
+                      },
+                      "url": {
+                        "stringValue": "https://www.coursera.org/user/shihab"
+                      },
+                      "icon": {
+                        "stringValue": "link"
+                      },
+                      "label": {
+                        "stringValue": "Coursera"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "email": {
+            "stringValue": "shihab.hossainSH@gmail.com"
+          },
+          "summary": {
+            "stringValue": "Results-driven Software Developer with industry experience in Frontend Development and Test Automation. Experienced in building scalable and reliable automation frameworks while ensuring high-quality user experiences in Agile environments."
+          },
+          "stats": {
+            "arrayValue": {
+              "values": [
+                {
+                  "mapValue": {
+                    "fields": {
+                      "label": {
+                        "stringValue": "Years in software"
+                      },
+                      "id": {
+                        "stringValue": "stat-mu08xrmt-a51zc"
+                      },
+                      "value": {
+                        "stringValue": "4+"
+                      }
+                    }
+                  }
+                },
+                {
+                  "mapValue": {
+                    "fields": {
+                      "id": {
+                        "stringValue": "stat-mu08xrmt-cjvc2"
+                      },
+                      "label": {
+                        "stringValue": "Professional products"
+                      },
+                      "value": {
+                        "stringValue": "9"
+                      }
+                    }
+                  }
+                },
+                {
+                  "mapValue": {
+                    "fields": {
+                      "id": {
+                        "stringValue": "stat-mu08xrmt-nbvq1"
+                      },
+                      "value": {
+                        "stringValue": "2"
+                      },
+                      "label": {
+                        "stringValue": "Employee of the Month"
+                      }
+                    }
+                  }
+                },
+                {
+                  "mapValue": {
+                    "fields": {
+                      "label": {
+                        "stringValue": "IEEE publication"
+                      },
+                      "value": {
+                        "stringValue": "1"
+                      },
+                      "id": {
+                        "stringValue": "stat-mu08xrmt-fou8u"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "availability": {
+            "stringValue": "Open to Frontend & Backend Engineering"
+          },
+          "tagline": {
+            "stringValue": "I build responsive product front-ends, scalable Django APIs, and the automation that keeps them trustworthy."
+          },
+          "roles": {
+            "arrayValue": {
+              "values": [
+                {
+                  "stringValue": "Full-Stack Web Developer"
+                },
+                {
+                  "stringValue": "Vue.js & Django Engineer"
+                },
+                {
+                  "stringValue": "Playwright Automation Engineer"
+                }
+              ]
+            }
+          },
+          "photoUrl": {
+            "stringValue": "./uploads/shihab-mu7gf9es.png"
+          },
+          "role": {
+            "stringValue": "Full-Stack Web Developer"
+          }
+        }
+      }
+    }
+  },
+  "createTime": "2026-09-20T14:12:17.827291Z",
+  "updateTime": "2026-09-20T14:23:34.567772Z"
+}
