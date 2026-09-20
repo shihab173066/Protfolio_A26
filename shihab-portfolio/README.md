@@ -16,23 +16,30 @@ npm run dev
 
 ## Admin sign-in
 
-There are no credentials in this repository. Set yours once, from the repo root:
+There are no credentials in this repository. Sign-in picks one of two modes automatically,
+depending on whether `VITE_FIREBASE_*` reached the build.
+
+**Firebase mode** (configured) — email/password through Firebase Authentication. The admin
+account lives in the Firebase console, and Firestore rules verify the resulting token on
+Google's servers, so the gate genuinely holds. Set it up once with
+[`../FIREBASE_SETUP.md`](../FIREBASE_SETUP.md).
+
+**Local mode** (no Firebase config) — a PBKDF2-SHA256 hash (310k iterations) written into the
+gitignored `shihab-portfolio/.env.local` by running this from the repo root:
 
 ```powershell
 npm run set-admin-password
 ```
 
-This writes your login id, a random salt and a PBKDF2-SHA256 hash (310k iterations) into
-the gitignored `shihab-portfolio/.env.local`. **The plaintext password is never stored.**
-Restart the dev server afterwards.
+**The plaintext password is never stored.** Restart the dev server afterwards.
 
-> **Know what this protects.** The site is static files with no backend, so the login runs
-> entirely in the browser and can be bypassed from devtools. What it does guarantee is that
-> your password appears nowhere in git or in `dist/` — only a hash does. This is acceptable
-> because the admin panel currently writes to `localStorage` only, so bypassing it lets
-> someone edit their own copy of the page and nothing more. If you ever enable the Firestore
-> sync below, that stops being true and you need real server-side auth (Firebase Auth) —
-> see the header comment in `src/composables/useAuth.js`.
+> **Know what local mode protects.** With no backend, that login runs entirely in the browser
+> and can be bypassed from devtools. What it does guarantee is that your password appears
+> nowhere in git or in `dist/` — only a hash does. It is acceptable only because in this mode
+> the admin panel writes to `localStorage` and nothing else, so bypassing it lets someone edit
+> their own copy of the page and nothing more. Once content is shared through Firestore that
+> stops being true — which is why configuring Firebase switches the login to Firebase Auth
+> rather than layering it on top. See the header comment in `src/composables/useAuth.js`.
 
 ## The résumé PDF
 
@@ -48,18 +55,21 @@ Put your photograph in `public/` as `Shihab_picture.jpg` — it is used for both
 and the PDF header. To serve a hand-made PDF instead, set **Admin → Profile → Résumé override
 URL** to a full `https://` link.
 
-## Connect Firebase (optional)
+## Connect Firebase
 
-Content is saved to `localStorage` by default, which means **admin edits are only visible in the
-browser that made them**. To publish edits to visitors, enable the (already-written, currently
-dormant) Firestore sync:
+Without `VITE_FIREBASE_*`, content is saved to `localStorage`, which means **admin edits are only
+visible in the browser that made them** — visitors keep seeing the defaults. Configuring Firebase
+switches both the content store (Firestore) and the login (Firebase Auth) over in one step.
+
+Full walkthrough: **[`../FIREBASE_SETUP.md`](../FIREBASE_SETUP.md)**. In short:
 
 1. Create a Firebase project → add a **Web app** → copy the config.
-2. `copy .env.example .env.local` and fill in the `VITE_FIREBASE_*` values.
+2. **Authentication** → enable Email/Password, create the admin user, and add your GitHub Pages
+   domain under Authorized domains.
 3. Create a **Firestore** database.
-4. Deploy `../firestore.rules` (public read, admin-only write) and replace the placeholder UID.
-5. Switch `useAuth.js` to Firebase Authentication — a client-side hash is not sufficient once
-   the data is shared.
+4. Publish `../firestore.rules` (public read, admin-only write) and set the admin address in it.
+5. `copy .env.example .env.local`, fill in the `VITE_FIREBASE_*` values, restart the dev server.
+6. Add the same six values as GitHub repository secrets so the deployed build gets them too.
 
 ## Content model
 
@@ -77,10 +87,16 @@ Sections can be created, reordered, hidden and deleted entirely from the admin U
 ## Deploy
 
 - **GitHub Pages** — push to `main`; `.github/workflows/deploy.yml` builds and publishes.
-  Add `VITE_ADMIN_ID`, `VITE_ADMIN_PW_SALT`, `VITE_ADMIN_PW_HASH` and `VITE_ADMIN_PW_ITERATIONS`
-  (copy the values from `.env.local`) as repository secrets, or the deployed admin screen will
-  have no credentials to check against. Enable Pages → Source: GitHub Actions.
-- **Manual** — `npm run deploy` (uses `gh-pages`).
+  Set Pages → Source to **GitHub Actions**.
+
+  Env files are gitignored, so the CI build only sees what you add under Settings → Secrets and
+  variables → Actions. Add the six `VITE_FIREBASE_*` values there, or the deployed admin screen
+  has nothing to authenticate against and reports *no sign-in configured*.
+- **Manual** — `npm run deploy` (uses `gh-pages`). This pushes your local `dist/`, which means it
+  can quietly overwrite the CI build with a stale one. Pick one deploy route and stick to it.
+
+Content edits made in the admin studio publish through Firestore and need no rebuild. Only code
+and files in `public/` require a push.
 
 Routing uses hash history (`/#/admin`) so no server rewrites are needed.
 

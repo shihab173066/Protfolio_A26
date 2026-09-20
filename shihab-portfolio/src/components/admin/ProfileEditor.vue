@@ -51,6 +51,10 @@ async function onPhotoFile(event) {
 
   // The dev server writes the file into `public/uploads/`; a static build has no
   // such endpoint, so fall back to embedding small images in the document.
+  //
+  // The cutoff is deliberately low: base64 inflates a file by ~33% and the whole
+  // content document has to fit inside Firestore's 1 MB limit alongside every
+  // section. Anything bigger belongs in public/ and gets committed with git.
   try {
     const res = await fetch(`${UPLOAD_ENDPOINT}?name=${encodeURIComponent(file.name)}`, {
       method: 'POST',
@@ -62,9 +66,10 @@ async function onPhotoFile(event) {
     patch('photoUrl', data.url)
     photoNote.value = `Saved to public/uploads — referenced as ${data.url}`
     return
-  } catch (error) {
-    if (file.size > 400 * 1024) {
-      photoNote.value = `${error.message} Drop the image in public/ manually and use a path like ./profile.jpg.`
+  } catch {
+    if (file.size > 150 * 1024) {
+      photoNote.value =
+        'Too large to embed. Put the file in shihab-portfolio/public/, commit and push it, then set this field to a path like ./my-photo.jpg.'
       return
     }
     embedAsDataUrl(file)

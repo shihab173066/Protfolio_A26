@@ -1,14 +1,18 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import AppIcon from '../AppIcon.vue'
 import { useAuth } from '../../composables/useAuth'
 
-const { authError, busy, login, credentialsConfigured } = useAuth()
+const { authError, busy, login, credentialsConfigured, authMode } = useAuth()
 
 const id = ref('')
 const password = ref('')
 const show = ref(false)
+
+const firebaseMode = computed(() => authMode === 'firebase')
+const idLabel = computed(() => (firebaseMode.value ? 'Admin email' : 'Admin ID'))
+const idPlaceholder = computed(() => (firebaseMode.value ? 'you@example.com' : 'you@yoursite'))
 
 async function submit() {
   await login(id.value.trim(), password.value)
@@ -39,18 +43,18 @@ async function submit() {
         </span>
 
         <h1 class="text-2xl font-extrabold tracking-tight text-white">Content studio</h1>
-        <p class="mt-1.5 text-sm text-ink-400">Sign in to edit the live portfolio.</p>
+        <p class="mt-1.5 text-sm text-ink-400">Sign in as Admin.</p>
 
         <div class="mt-7 grid gap-4">
           <div>
-            <label class="label !text-ink-400" for="admin-id">Admin ID</label>
+            <label class="label !text-ink-400" for="admin-id">{{ idLabel }}</label>
             <input
               id="admin-id"
               v-model="id"
               class="field border-white/10 bg-white/5 text-white placeholder:text-ink-500"
               type="text"
-              autocomplete="username"
-              placeholder="you@yoursite"
+              :autocomplete="firebaseMode ? 'email' : 'username'"
+              :placeholder="idPlaceholder"
               required
             />
           </div>
@@ -92,9 +96,20 @@ async function submit() {
           v-if="!credentialsConfigured"
           class="mt-6 rounded-lg border border-amber-400/20 bg-amber-400/10 p-3 text-[11px] leading-5 text-amber-200"
         >
-          No admin credentials in this build. Run
-          <code class="rounded bg-black/30 px-1">npm run set-admin-password</code>
-          and restart the dev server.
+          This build has no sign-in configured. Locally, copy
+          <code class="rounded bg-black/30 px-1">.env.example</code> to
+          <code class="rounded bg-black/30 px-1">.env.local</code>, fill in the
+          <code class="rounded bg-black/30 px-1">VITE_FIREBASE_*</code> values and restart the dev
+          server. On GitHub Pages, add those same values as repository secrets — see
+          <code class="rounded bg-black/30 px-1">FIREBASE_SETUP.md</code>.
+        </p>
+
+        <p
+          v-else-if="!firebaseMode"
+          class="mt-6 rounded-lg border border-amber-400/20 bg-amber-400/10 p-3 text-[11px] leading-5 text-amber-200"
+        >
+          Local storage mode — Firebase is not configured on this build, so anything you edit here
+          is saved in this browser only and visitors will not see it.
         </p>
       </form>
     </div>

@@ -1,16 +1,32 @@
 rules_version = '2';
 
-// Public read, authenticated write.
-// Deploy with:  firebase deploy --only firestore:rules
+// Public read, admin-only write.
+//
+// The portfolio is world-readable by design — every visitor's browser streams
+// `portfolio/content` to render the page. Writes are restricted to one signed-in
+// Firebase Auth account, checked here on Google's servers. That server-side
+// check is the actual access control; the sign-in form in the app is only a UI
+// for obtaining the token.
+//
+// Paste this into: Firebase console -> Firestore Database -> Rules -> Publish.
+// Or, with the Firebase CLI:  firebase deploy --only firestore:rules
+
 service cloud.firestore {
   match /databases/{database}/documents {
+
+    // The single content document the site reads and the admin panel writes.
     match /portfolio/{document} {
       allow read: if true;
-      // Replace REPLACE_WITH_YOUR_ADMIN_UID with the UID of the admin user you
-      // create in Firebase Authentication → Users.
-      allow write: if request.auth != null && request.auth.uid == 'REPLACE_WITH_YOUR_ADMIN_UID';
+
+      // Change this address if you ever move the admin account. Matching on
+      // email keeps setup simple; swapping it for
+      //   request.auth.uid == '<uid from Authentication -> Users>'
+      // is equivalent and survives an email change on the account.
+      allow write: if request.auth != null
+                   && request.auth.token.email == 'shihabprotfolio@gmail.com';
     }
 
+    // Everything else stays shut. New collections must be opened deliberately.
     match /{document=**} {
       allow read, write: if false;
     }

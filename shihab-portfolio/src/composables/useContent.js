@@ -93,6 +93,28 @@ function setContent(next) {
 }
 
 /**
+ * Firestore's error codes name the mechanism, not the fix. `permission-denied`
+ * in particular is almost always the rules file, and saying so saves an hour of
+ * staring at the network tab.
+ */
+function describeFirestoreError(err) {
+  switch (err?.code) {
+    case 'permission-denied':
+      return 'Firestore rejected the write. Check that firestore.rules is deployed and that the signed-in account matches the admin address in it.'
+    case 'unauthenticated':
+      return 'Your admin session expired. Sign out and back in.'
+    case 'unavailable':
+      return 'Could not reach Firestore. Check your connection and try again.'
+    case 'not-found':
+      return 'The Firestore database does not exist yet. Create it in Firebase console → Firestore Database.'
+    case 'invalid-argument':
+      return 'Firestore rejected the document — it may be over the 1 MB limit. Large embedded images are the usual cause.'
+    default:
+      return err?.message || 'Could not save changes.'
+  }
+}
+
+/**
  * Starts the live content stream. With Firebase configured this is a Firestore
  * `onSnapshot` listener, so an admin save is pushed to every open visitor tab.
  */
@@ -121,7 +143,10 @@ export async function initContent() {
     (err) => {
       // Keep showing the cached copy so visitors still see something.
       console.error('[portfolio] Firestore subscription failed:', err)
-      state.error = 'Live content unavailable — showing the last cached version.'
+      state.error =
+        err?.code === 'permission-denied'
+          ? 'Firestore denied public read access — deploy firestore.rules. Showing the last cached version.'
+          : 'Live content unavailable — showing the last cached version.'
       state.source = 'local'
     },
   )
@@ -145,7 +170,7 @@ export async function saveContent(next) {
     return { ok: true }
   } catch (err) {
     console.error('[portfolio] save failed:', err)
-    state.error = err?.message || 'Could not save changes.'
+    state.error = describeFirestoreError(err)
     return { ok: false, error: state.error }
   } finally {
     state.saving = false

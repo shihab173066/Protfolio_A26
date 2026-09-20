@@ -33,17 +33,19 @@ jobs:
 
       - run: npm run build
         env:
+          # Firebase web config. Without these the deployed site falls back to
+          # per-browser localStorage, so admin edits never reach visitors and
+          # the sign-in form has nothing to authenticate against. Add them under
+          # Settings -> Secrets and variables -> Actions. See FIREBASE_SETUP.md.
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
           VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
           VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
           VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
           VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
-          # Admin sign-in. Copy these four from shihab-portfolio/.env.local after
-          # running `npm run set-admin-password`, and add them as repository
-          # secrets. Without them the deployed admin screen has no credentials
-          # and nobody can sign in. The hash is safe to ship; the password is not
-          # derivable from it.
+          # Legacy hash sign-in, used only when the Firebase values above are
+          # absent. With Firebase configured the admin account lives in Firebase
+          # Authentication and these are ignored, so they can be left unset.
           VITE_ADMIN_ID: ${{ secrets.VITE_ADMIN_ID }}
           VITE_ADMIN_PW_SALT: ${{ secrets.VITE_ADMIN_PW_SALT }}
           VITE_ADMIN_PW_HASH: ${{ secrets.VITE_ADMIN_PW_HASH }}
